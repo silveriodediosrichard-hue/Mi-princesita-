@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para mi Reina Emily</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a001f, black);
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    font-size: 3em;
+    color: #ff4da6;
+    text-shadow: 0 0 20px #ff66cc;
+}
+
+.corazon {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    animation: subir 8s linear infinite;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>PARA MI REINA EMILY ❤️</h1>
+
+<script>
+const mensajes = [
+    "Te amo ❤️",
+    "Eres mi todo 💕",
+    "Mi princesa 👑",
+    "Contigo siempre 💖",
+    "Mi corazón es tuyo 💘",
+    "Mi reina hermosa 💎"
+];
+
+function crearCorazon() {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    
+    const texto = mensajes[Math.floor(Math.random() * mensajes.length)];
+    corazon.innerHTML = "❤️ " + texto;
+    
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.animationDuration = (5 + Math.random() * 5) + "s";
+    
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 8000);
+}
+
+setInterval(crearCorazon, 800);
+</script>
+
+</body>
+</html>
